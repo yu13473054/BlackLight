@@ -14,7 +14,7 @@ public class MovieCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("test="+Time.deltaTime);
+//		Debug.Log ("test="+Time.deltaTime);
 		if(transform.position.z<-20){
 			transform.Translate (Vector3.forward*speed*Time.deltaTime);
 		}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterCreation : MonoBehaviour {
 	public GameObject[] characters;
 	public int characterId;
+    public UIInput nameInput;
 
 	private GameObject[] chaObjs;
 	private int length;
@@ -31,7 +32,7 @@ public class CharacterCreation : MonoBehaviour {
 		}
 	}
 
-	public void next(){
+	public void Next(){
 		characterId++;
 //		characterId %= length;
 		if(characterId>length-1){
@@ -40,12 +41,21 @@ public class CharacterCreation : MonoBehaviour {
 		UpdateCha ();
 	}
 
-	public void prev(){
+	public void Prev(){
 		characterId--;
 		if(characterId<0){
 			characterId = length-1;
 		}
 		UpdateCha ();
 	}
+
+    public void OkBtn()
+    {
+        PlayerPrefs.SetInt("selectCharacterIndex", characterId);
+        PlayerPrefs.SetString("characterName", nameInput.value);
+
+        Debug.Log(PlayerPrefs.GetInt("selectCharacterIndex")
+            + "   " + PlayerPrefs.GetString("characterName"));
+    }
 
 }

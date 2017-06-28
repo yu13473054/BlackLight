@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tags : MonoBehaviour {
+public class Tags {
 
     public const string ground = "Ground";//地面
-    public const string player = "player";
+    public const string player = "Player";
 
 }
